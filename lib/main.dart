@@ -41,7 +41,10 @@ class ChatListState extends State<ChatList>{
       body:Align(
       alignment: Alignment.bottomCenter,
         // color: Colors.grey,
-        child: Column(
+        child: Container(
+          padding: EdgeInsets.all(10),
+          margin: EdgeInsets.all(10),
+          child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(children: [
@@ -49,7 +52,7 @@ class ChatListState extends State<ChatList>{
               TextField(
                 controller: chatController,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                     hintText: 'Write your message...'
                 ),
               ),
@@ -57,8 +60,9 @@ class ChatListState extends State<ChatList>{
               SizedBox(width: 10,),
               SizedBox(child: ElevatedButton(onPressed:addChat,style: ElevatedButton.styleFrom(backgroundColor: Colors.green), child: Text('Send')),),
             ],),
-            Padding(padding: EdgeInsets.all(10),),
+           
             ],),
+            ),
 
 
 
