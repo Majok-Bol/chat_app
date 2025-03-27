@@ -71,6 +71,7 @@ class ChatListState extends State<ChatList>{
                   // hintText: 'Message'
                 ),
               )),
+              SizedBox(width: 20,),
               SizedBox(child: ElevatedButton(onPressed: addChat, style:ElevatedButton.styleFrom(backgroundColor: Colors.green),child: Text('Send')),)
             ],
           ),)
