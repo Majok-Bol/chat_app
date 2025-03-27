@@ -36,7 +36,7 @@ class ChatListState extends State<ChatList>{
   @override
   Widget build(BuildContext){
     return Scaffold(
-      appBar: AppBar(title: Text('Chat App'),),
+      appBar: AppBar(title: Text('Chat App'),centerTitle: true,),
       body: Container(
         padding:EdgeInsets.all(10),
         margin: EdgeInsets.all(10),
