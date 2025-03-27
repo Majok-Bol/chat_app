@@ -38,34 +38,43 @@ class ChatListState extends State<ChatList>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(title: Text('Chat  App',style: TextStyle(color: Colors.white,fontSize: 20),),centerTitle: true,backgroundColor: Colors.purple,),
-      body:Align(
-      alignment: Alignment.bottomCenter,
-        // color: Colors.grey,
-        child: Container(
-          padding: EdgeInsets.all(10),
-          margin: EdgeInsets.all(10),
-          child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(children: [
-              Expanded(child:
-              TextField(
+      body:Column(
+        // mainAxisSize: MainAxisSize.min,
+        children: [
+          Expanded(child:ListView.builder(
+            itemCount: chats.length,
+
+              itemBuilder:(context,index){
+            return Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  // borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(chats[index],style: TextStyle(color: Colors.black),),
+              ),
+
+            );
+
+          })),
+          Padding(padding: EdgeInsets.all(10),child: Row(
+            // mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(child: TextField(
                 controller: chatController,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                    hintText: 'Write your message...'
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                  labelText: 'Message',
+                  // hintText: 'Message'
                 ),
-              ),
-              ),
-              SizedBox(width: 10,),
-              SizedBox(child: ElevatedButton(onPressed:addChat,style: ElevatedButton.styleFrom(backgroundColor: Colors.green), child: Text('Send')),),
-            ],),
-           
-            ],),
-            ),
-
-
-
+              )),
+              SizedBox(child: ElevatedButton(onPressed: addChat, style:ElevatedButton.styleFrom(backgroundColor: Colors.green),child: Text('Send')),)
+            ],
+          ),)
+        ],
       ),
     );
 
