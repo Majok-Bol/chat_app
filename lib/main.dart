@@ -35,13 +35,33 @@ class ChatListState extends State<ChatList>{
     });
   }
   @override
-  Widget build(BuildContext){
+  Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text('Chat App',style: TextStyle(color: Colors.white,fontSize: 20),),centerTitle: true,backgroundColor: Colors.purple,),
-      body: Container(
-        padding:EdgeInsets.all(10),
-        margin: EdgeInsets.all(10),
-        color: Colors.grey,
+      appBar: AppBar(title: Text('Chat  App',style: TextStyle(color: Colors.white,fontSize: 20),),centerTitle: true,backgroundColor: Colors.purple,),
+      body:Align(
+      alignment: Alignment.bottomCenter,
+        // color: Colors.grey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(children: [
+              Expanded(child:
+              TextField(
+                controller: chatController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Write your message...'
+                ),
+              ),
+              ),
+              SizedBox(width: 10,),
+              SizedBox(child: ElevatedButton(onPressed:addChat,style: ElevatedButton.styleFrom(backgroundColor: Colors.green), child: Text('Send')),),
+            ],),
+            Padding(padding: EdgeInsets.all(10),),
+            ],),
+
+
+
       ),
     );
 
