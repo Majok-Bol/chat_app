@@ -10,3 +10,7 @@ class MyApp extends StatelessWidget{
     );
   }
 }
+class ChatList extends StatefulWidget{
+  @override
+  ChatListState createState()=>ChatListState();
+}
