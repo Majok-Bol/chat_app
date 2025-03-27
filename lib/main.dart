@@ -52,7 +52,6 @@ class ChatListState extends State<ChatList>{
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.blue,
-                  // borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(chats[index],style: TextStyle(color: Colors.black),),
               ),
@@ -60,7 +59,7 @@ class ChatListState extends State<ChatList>{
             );
 
           })),
-          Padding(padding: EdgeInsets.all(10),child: Row(
+          Padding(padding: EdgeInsets.all(25),child: Row(
             // mainAxisSize: MainAxisSize.min,
             children: [
               Expanded(child: TextField(
